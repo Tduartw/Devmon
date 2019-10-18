@@ -8,11 +8,18 @@ module.exports = {
             type: "Frontend",
             category: "programador",
             abilities: ["Algoritimo", "Magento", "CSS"],
-            stats: [69, 999, 999, 99999, 99999, 30],
+            stats: {hp:69, attack: 999, defense: 999, sp: 99999, sd: 99999, speed:30},
             weakness: ["Backend", "Wordpress"],
             evolutions: ["Fullstack", "Devops", "Senior"]
         });
 
         return res.json(pokedex);
     }
+}
+
+
+async list(req, res){
+    const {name} = await req.body;
+
+
 }

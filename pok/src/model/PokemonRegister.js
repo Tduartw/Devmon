@@ -7,14 +7,14 @@ const PokemonRegister = new Schema({
     type: String,
     category: String,
     abilities: Array,
-    stats:[{
+    stats:{
         hp: Number,
         attack: Number,
         defense: Number,
         sp: Number,
         sd: Number,
         speed: Number
-    }],
+    },
     weakness: Array,
     evolutions: Array
 });

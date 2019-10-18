@@ -4,18 +4,13 @@ const mongoose = require('mongoose');
 const PokemonRegister = require('./src/control/PokemonController');
 
 
-mongoose.connect('mongodb://localhost:27017/pokedex', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://pokeproject:pika123@cluster0-xuil4.mongodb.net/pokedex?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
-server.get('/', (req, res) =>{  
-    res.send('AI PAI');
-    mongoose.model('PokemonRegister').find((err, PokemonRegister)=>{
-        res.json(PokemonRegister);
-    })
-});
+server.post('/register', PokemonRegister.store);
 
 
 
 
 
-
+server.use(express.json());
 server.listen('3000');
